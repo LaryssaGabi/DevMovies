@@ -1,4 +1,5 @@
 import api from '../../services/api'
+import { Backgroud } from './styles'
 
 function Home() {
 
@@ -11,9 +12,9 @@ function Home() {
 
     return (
         <>
-            <div>
+            <Backgroud img='https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg'>
                 <h1>Home</h1>
-            </div>
+            </Backgroud>
         </>
     )
 }
