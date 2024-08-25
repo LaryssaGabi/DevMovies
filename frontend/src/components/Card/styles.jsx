@@ -6,7 +6,6 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     
     img{
         border-radius: 30px;
@@ -17,6 +16,6 @@ export const Container = styled.div`
     h3{
         color: #fff;
         margin-top: 15px;
-    }
+    }   
 
 `

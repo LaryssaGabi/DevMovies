@@ -14,11 +14,11 @@ function Slider({ info, title }) {
                 grabCursor
                 spaceBetween={10}
                 slidesPerView={'auto'}
-                className="swiper"  
+                className="swiper"
             >
                 {info.map((item, index) => (
                     <SwiperSlide key={index}>
-                        <Card item={item}/>
+                        <Card item={item} />
                     </SwiperSlide>
                 ))}
 

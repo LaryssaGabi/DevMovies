@@ -25,6 +25,7 @@ export const Container = styled.div`
     align-items: center;
     height: 100%;
     max-width: 1500px;
+
 `
 export const Info = styled.div`
     z-index: 2;
