@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import api from '../../services/api'
 import { Backgroud, Container, Info, ContainerButtons, Poster } from './styles'
 import Button from '../../components/Button'
@@ -13,6 +14,7 @@ function Home() {
     const [topSeries, setTopSeries] = useState([])
     const [popularSeries, setPopularSeries] = useState([])
     const [topPeople, setTopPeople] = useState([])
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -58,13 +60,13 @@ function Home() {
         <>
             {movie && (
                 <Backgroud img={getImages(movie.backdrop_path)}>
-                    {showModal && <Modal movieId={movie.id} setShowModal={setShowModal}/>}
+                    {showModal && <Modal movieId={movie.id} setShowModal={setShowModal} />}
                     <Container>
                         <Info>
                             <h1>{movie.title}</h1>
                             <p>{movie.overview}</p>
                             <ContainerButtons>
-                                <Button red={true}>Assita Agora</Button>
+                                <Button red={true} onClick={() => navigate(`/detalhe/${movie.id}`)} >Assita Agora</Button>
                                 <Button red={false} onClick={() => setShowModal(true)}>Assita o Trailer</Button>
                             </ContainerButtons>
                         </Info>
