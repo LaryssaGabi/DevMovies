@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Container } from "./styles"
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Card from "../Card"
 
 
 function Slider({ info, title }) {
@@ -13,11 +14,11 @@ function Slider({ info, title }) {
                 grabCursor
                 spaceBetween={10}
                 slidesPerView={'auto'}
-                className="swiper"
+                className="swiper"  
             >
                 {info.map((item, index) => (
                     <SwiperSlide key={index}>
-                        <div style={{color: 'white'}}>{item.original_title}</div>
+                        <Card item={item}/>
                     </SwiperSlide>
                 ))}
 
