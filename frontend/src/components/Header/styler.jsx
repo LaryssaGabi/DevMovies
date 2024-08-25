@@ -2,12 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     z-index: 99;
+    min-height: 100px;
     position: fixed;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
+    background-color: ${props => props.changeBackground ? '#000' : 'trasparent'};
+    transition: background-color 0.6s ease-in-out;
 
     img{
         width: 26%;
