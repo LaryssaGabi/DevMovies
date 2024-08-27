@@ -45,8 +45,8 @@ export const Container = styled.div`
     align-items: flex-start;
     height: 100%;
     max-width: 1500px;
+    margin-left: 150px;
     margin-top: -100px;
-
 
 `
 export const Cover = styled.div`

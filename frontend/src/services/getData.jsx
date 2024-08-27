@@ -34,8 +34,8 @@ export async function getMovieVideos(movieId) {
 }
 
 export async function getMovieCredits(movieId) {
-    const { data } = await api.get(`/movie/${movieId}/credits`)
-    return data
+    const { data: { cast } } = await api.get(`/movie/${movieId}/credits`)
+    return cast
 }
 export async function getMovieSimilar(movieId) {
     const { data: { results } } = await api.get(`/movie/${movieId}/similar`)
