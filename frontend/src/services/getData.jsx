@@ -89,6 +89,12 @@ export async function getTopSerie() {
     const { data: { results } } = await api.get('/tv/top_rated')
     return results
 }
+export async function getAring() {
+    const { data: { results } } = await api.get('/tv/airing_today')
+    return results
+}
+
+
 
 
 

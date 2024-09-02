@@ -5,7 +5,7 @@ import Button from '../../components/Button'
 import Slider from '../../components/Slider'
 import { getImages } from '../../utils/getImages'
 import Modal from '../../components/Modal'
-import { getSeries, getPopularSerie, getSerieAir,getTopSerie } from '../../services/getData'
+import { getSeries, getPopularSerie, getSerieAir, getTopSerie, getAring } from '../../services/getData'
 
 function Series() {
     const [showModal, setShowModal] = useState(false)
@@ -13,6 +13,7 @@ function Series() {
     const [popularSeries, setPopularSeries] = useState([])
     const [serieAir, setSerieAir] = useState([])
     const [topSerie, setTopSerie] = useState([])
+    const [arings, setArings] = useState([])
     const navigate = useNavigate()
 
 
@@ -23,12 +24,15 @@ function Series() {
                 getPopularSerie(),
                 getSerieAir(),
                 getTopSerie(),
+                getAring(),
             ])
-                .then(([serie, popularSeries, serieAir,topSerie]) => {
+                .then(([serie, popularSeries, serieAir, topSerie, arings]) => {
+                    console.log({ serie, popularSeries, serieAir, topSerie, arings })
                     setSerie(serie)
                     setPopularSeries(popularSeries)
                     setSerieAir(serieAir)
                     setTopSerie(topSerie)
+                    setArings(arings)
                 })
                 .catch((error) => console.error(error))
         }
@@ -64,6 +68,8 @@ function Series() {
             {popularSeries && <Slider info={popularSeries} title={'Series Populares'} />}
             {serieAir && <Slider info={serieAir} title={'Series'} />}
             {topSerie && <Slider info={topSerie} title={'Series Top'} />}
+            {arings && <Slider info={arings} title={'Exibidos na TV'} />}
+
 
         </>
     )
