@@ -6,6 +6,7 @@ import Slider from '../../components/Slider'
 import { getImages } from '../../utils/getImages'
 import Modal from '../../components/Modal'
 import { getMovie, getPopularMovie,getMovieViewNow,getMovieView } from '../../services/getData'
+import FooterCine from '../../components/Footer'
 
 function Movies() {
     const [showModal, setShowModal] = useState(false)
@@ -64,7 +65,7 @@ function Movies() {
             {popularMovies && <Slider info={popularMovies} title={'Filmes Na Alta'} />}
             {movieViewNow && <Slider info={movieViewNow} title={'Filmes para asistir agora'} />}
             {movieView && <Slider info={movieView} title={'Filmes para asistir no film de Noite'} />}
-
+            <FooterCine />
         </>
     )
 }

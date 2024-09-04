@@ -4,11 +4,12 @@ import { Backgroud, Container, Info, ContainerButtons, Poster } from './styles'
 import Button from '../../components/Button'
 import Slider from '../../components/Slider'
 import { getImages } from '../../utils/getImages'
-import Modal from '../../components/Modal'
+import ModalSerie from '../../components/ModalSerie'
 import { getSeries, getPopularSerie, getSerieAir, getTopSerie, getAring } from '../../services/getData'
+import FooterCine from '../../components/Footer'
 
 function Series() {
-    const [showModal, setShowModal] = useState(false)
+    const [showModalSerie, setShowModalSerie] = useState(false)
     const [serie, setSerie] = useState([])
     const [popularSeries, setPopularSeries] = useState([])
     const [serieAir, setSerieAir] = useState([])
@@ -27,7 +28,6 @@ function Series() {
                 getAring(),
             ])
                 .then(([serie, popularSeries, serieAir, topSerie, arings]) => {
-                    console.log({ serie, popularSeries, serieAir, topSerie, arings })
                     setSerie(serie)
                     setPopularSeries(popularSeries)
                     setSerieAir(serieAir)
@@ -48,14 +48,14 @@ function Series() {
         <>
             {serie && (
                 <Backgroud img={getImages(serie.backdrop_path)}>
-                    {showModal && <Modal movieId={serie.id} setShowModal={setShowModal} />}
+                    {showModalSerie && <ModalSerie serieId={serie.id} setShowModalSerie={setShowModalSerie} />}
                     <Container>
                         <Info>
                             <h1>{serie.title}</h1>
                             <p>{serie.overview}</p>
                             <ContainerButtons>
-                                <Button red={true} onClick={() => navigate(`/detalhe/${serie.id}`)} >Assita Agora</Button>
-                                <Button red={false} onClick={() => setShowModal(true)}>Assita o Trailer</Button>
+                                <Button red={true} onClick={() => navigate(`/detalheSeries/${serie.id}`)} >Assita Agora</Button>
+                                <Button red={false} onClick={() => setShowModalSerie(true)}>Assita o Trailer</Button>
                             </ContainerButtons>
                         </Info>
                         <Poster>
@@ -70,7 +70,7 @@ function Series() {
             {topSerie && <Slider info={topSerie} title={'Series Top'} />}
             {arings && <Slider info={arings} title={'Exibidos na TV'} />}
 
-
+            <FooterCine />
         </>
     )
 }

@@ -2,34 +2,35 @@ import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import { Container, Background, Cover, Info, ContainerMovies } from "./styles"
 import Slider from '../../components/Slider'
-import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos } from "../../services/getData"
 import { getImages } from "../../utils/getImages"
 import SpanGenres from "../../components/SpanGenres"
 import Credits from "../../components/Credits"
+import { getSerieById, getSerieCredits, getSerieSimilar, getSerieVideos } from "../../services/getData"
 import FooterCine from "../../components/Footer"
 
 
 
-function Detail() {
+function DetailSerie() {
     const { id } = useParams()
-    const [movie, setMovie] = useState()
-    const [movieVideos, setMovieVideo] = useState()
-    const [movieCredits, setMovieCredits] = useState()
-    const [movieSimilar, setMovieSimilar] = useState()
+    const [serie, setSerie] = useState()
+    const [serieVideos, setSerieVideo] = useState()
+    const [serieCredits, setSerieCredits] = useState()
+    const [serieSimilar, setSerieSimilar] = useState()
 
     useEffect(() => {
         async function getAllData() {
             Promise.all([
-                getMovieById(id),
-                getMovieVideos(id),
-                getMovieCredits(id),
-                getMovieSimilar(id),
+                getSerieById(id),
+                getSerieVideos(id),
+                getSerieCredits(id),
+                getSerieSimilar(id),
             ])
-                .then(([movie, videos, credits, similar]) => {
-                    setMovie(movie)
-                    setMovieVideo(videos)
-                    setMovieCredits(credits)
-                    setMovieSimilar(similar)
+                .then(([serie, videos, credits, similar]) => {
+                    console.log({ serie, videos, credits, similar })
+                    setSerie(serie)
+                    setSerieVideo(videos)
+                    setSerieCredits(credits)
+                    setSerieSimilar(similar)
                 })
                 .catch((error) => console.error(error))
         }
@@ -40,25 +41,25 @@ function Detail() {
 
     return (
         <>
-            {movie && (
+            {serie && (
                 <>
-                    <Background image={getImages(movie.backdrop_path)} />
+                    <Background image={getImages(serie.backdrop_path)} />
                     <Container>
                         <Cover>
-                            <img src={getImages(movie.poster_path)} />
+                            <img src={getImages(serie.poster_path)} />
                         </Cover>
                         <Info>
-                            <h2>{movie.title}</h2>
-                            <SpanGenres genres={movie.genres} />
-                            <p>{movie.overview}</p>
+                            <h2>{serie.title}</h2>
+                            <SpanGenres genres={serie.genres} />
+                            <p>{serie.overview}</p>
                             <div>
-                                <Credits credits={movieCredits} />
+                                <Credits credits={serieCredits} />
                             </div>
                         </Info>
                     </Container>
 
                     <ContainerMovies>
-                        {movieVideos && movieVideos.map((video) => (
+                        {serieVideos && serieVideos.map((video) => (
                             <div key={video.id}>
                                 <h4>{video.name}</h4>
                                 <iframe
@@ -72,8 +73,7 @@ function Detail() {
                         ))}
                     </ContainerMovies>
 
-                    {movieSimilar && <Slider info={movieSimilar} title={'Filmes Similares'} />}
-
+                    {serieSimilar && <Slider info={serieSimilar} title={'Filmes Similares'} />}
                 </>
             )}
             <FooterCine />
@@ -81,4 +81,4 @@ function Detail() {
     )
 }
 
-export default Detail
+export default DetailSerie

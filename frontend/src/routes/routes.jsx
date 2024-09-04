@@ -5,6 +5,7 @@ import Movies from '../containers/Movies'
 import Series from '../containers/Series'
 import DefaultLayout from '../layout/DefaultLayout'
 import Detail from '../containers/Detail'
+import DetailSerie from '../containers/DetailSerie'
 
 function Router() {
     return (
@@ -14,6 +15,8 @@ function Router() {
                 <Route path="/filmes" element={<Movies />} />
                 <Route path="/series" element={<Series />} />
                 <Route path="/detalhe/:id" element={<Detail />} />
+                <Route path="/detalheSeries/:id" element={<DetailSerie />} />
+
             </Route>
         </Routes>
     )

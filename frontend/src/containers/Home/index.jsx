@@ -6,6 +6,7 @@ import Slider from '../../components/Slider'
 import { getImages } from '../../utils/getImages'
 import Modal from '../../components/Modal'
 import { getMovies, getPopularSeries, getTopMovies, getTopPeople, getTopSeries } from '../../services/getData'
+import FooterCine from '../../components/Footer'
 
 function Home() {
     const [showModal, setShowModal] = useState(false)
@@ -16,7 +17,7 @@ function Home() {
     const [topPeople, setTopPeople] = useState([])
     const navigate = useNavigate()
 
-    
+
     useEffect(() => {
         async function getAllData() {
             Promise.all([
@@ -68,6 +69,7 @@ function Home() {
             {topSeries && <Slider info={topSeries} title={'Top Series'} />}
             {popularSeries && <Slider info={popularSeries} title={'Series Na Alta'} />}
             {topPeople && <Slider info={topPeople} title={'Artista Na Alta'} />}
+            <FooterCine />
         </>
     )
 }
