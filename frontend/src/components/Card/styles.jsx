@@ -6,11 +6,20 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: 200ms;
     
     img{
-        border-radius: 30px;
+        border-radius: 15px;
         width: 300px;
         height: 100%;
+        cursor: pointer;
+        transition: 300ms ease-in-out;
+
+        &:hover{
+            border: #E6E339 solid 2px;
+            padding: 2px;
+        }
+
     }
 
     h3{

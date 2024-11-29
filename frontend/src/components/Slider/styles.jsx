@@ -7,14 +7,13 @@ export const Container = styled.div`
     overflow: hidden;
 
     h2{
-        color: #fff;
+        color: #E6E339;
         font-size: 24px;
         margin: 50px 0 20px;
     }
     
     .swiper-wrapper{
         display: flex;
-        
     }
 
 `
