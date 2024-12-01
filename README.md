@@ -1,6 +1,6 @@
 # DevMovies - Plataforma de Descoberta de Filmes e Séries
 
-**DevMovies** é uma aplicação web que permite aos usuários descobrir filmes e séries, criar listas personalizadas, avaliar títulos e interagir com outros usuários por meio de comentários. A plataforma integra a API do **The Movie Database (TMDb)** para fornecer informações detalhadas sobre filmes e séries, como sinopse, elenco, trailers e muito mais.
+**DevMovies** é uma aplicação web que permite aos usuários descobrir filmes e séries, criar listas personalizadas, avaliar títulos e interagir com outros usuários por meio de comentários. A plataforma integra a API do **The Movie Database (TMDb)** para fornecer informações detalhadas sobre filmes e séries, como sinopse, elenco, trailers e muito mais
 
 ## Funcionalidades
 
