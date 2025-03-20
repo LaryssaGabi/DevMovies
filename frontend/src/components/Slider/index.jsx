@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 function Slider({ info, title }) {
     const navigate = useNavigate()
-    
+
     return (
         <Container>
             <h2>{title}</h2>
@@ -19,7 +19,13 @@ function Slider({ info, title }) {
             >
                 {info.map((item, index) => (
                     <SwiperSlide key={index}>
-                        <Card item={item} onClick={() => navigate(`/detalhe/${item.id}`) }/>
+                        <Card 
+                        item={item}
+                        onClick={() => {
+                            const route = item.title ? `/detalhe/${item.id}` : `/detalheSeries/${item.id}`;
+                            navigate(route);
+                        }}
+                        />
                     </SwiperSlide>
                 ))}
 
