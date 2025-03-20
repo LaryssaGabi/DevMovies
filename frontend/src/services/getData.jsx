@@ -22,7 +22,7 @@ export async function getPopularSeries() {
 }
 
 export async function getTopPeople() {
-    const { data: { results } } = await api.get('/person/popular')
+    const { data: { results } } = await api.get('movie/upcoming')
     return results
 }
 
@@ -30,7 +30,7 @@ export async function getTopPeople() {
 //Filmes
 export async function getMovie() {
     const { data: { results } } = await api.get('/movie/upcoming')
-    return results[3]
+    return results[1]
 }
 
 export async function getPopularMovie() {
@@ -51,12 +51,7 @@ export async function getMovieView() {
 //Series
 export async function getSeries() {
     const { data: { results } } = await api.get('/tv/top_rated')
-    return results[1]
-}
-
-export async function getPopularSerie() {
-    const { data: { results } } = await api.get('/tv/popular')
-    return results
+    return results[2]
 }
 
 export async function getSerieAir() {

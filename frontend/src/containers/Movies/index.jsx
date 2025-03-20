@@ -5,8 +5,10 @@ import Button from '../../components/Button'
 import Slider from '../../components/Slider'
 import { getImages } from '../../utils/getImages'
 import Modal from '../../components/Modal'
-import { getMovie, getPopularMovie,getMovieViewNow,getMovieView } from '../../services/getData'
+import { getMovie, getPopularMovie, getMovieViewNow, getMovieView } from '../../services/getData'
 import FooterCine from '../../components/Footer'
+
+import { Drama, Film, Video } from 'lucide-react'
 
 function Movies() {
     const [showModal, setShowModal] = useState(false)
@@ -25,7 +27,7 @@ function Movies() {
                 getMovieViewNow(),
                 getMovieView(),
             ])
-                .then(([movie, popularMovies,movieViewNow,movieView]) => {
+                .then(([movie, popularMovies, movieViewNow, movieView]) => {
                     setMovie(movie)
                     setPopularMovies(popularMovies)
                     setMovieViewNow(movieViewNow)
@@ -62,9 +64,9 @@ function Movies() {
                 </Backgroud >
             )}
 
-            {popularMovies && <Slider info={popularMovies} title={'Filmes Na Alta'} />}
-            {movieViewNow && <Slider info={movieViewNow} title={'Filmes para asistir agora'} />}
-            {movieView && <Slider info={movieView} title={'Filmes para asistir no film de Noite'} />}
+            {popularMovies && <Slider info={popularMovies} title={<><Film /> Filmes Na Alta </>} />}
+            {movieViewNow && <Slider info={movieViewNow} title={<><Video /> Filmes para asistir agora </>} />}
+            {movieView && <Slider info={movieView} title={<><Drama /> Filmes para asistir no fim da Noite </>} />}
             <FooterCine />
         </>
     )
