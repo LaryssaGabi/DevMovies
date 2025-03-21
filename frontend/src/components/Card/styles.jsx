@@ -10,7 +10,7 @@ export const Container = styled.div`
     
     img{
         border-radius: 15px;
-        width: 300px;
+        width: 200px;
         height: 100%;
         cursor: pointer;
         transition: 300ms ease-in-out;

@@ -22,13 +22,29 @@ export const Menu = styled.ul`
     list-style: none;
     gap: 50px;
 
+    @media screen and (max-width: 990px) {
+        gap: 25px;
+    }
     
+    @media screen and (max-width: 790px) {
+        gap: 15px;
+    }
+
 `
 export const Li = styled.li`
     font-weight: 600;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 1.8rem;
     position: relative;
+
+    @media screen and (max-width: 990px) {
+        font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 790px) {
+        font-size: 1.2rem;
+    }
+  
 
     a{
         color: #fff;

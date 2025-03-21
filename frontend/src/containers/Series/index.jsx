@@ -9,6 +9,8 @@ import { getSeries, getSerieAir, getTopSerie, getAring } from '../../services/ge
 import FooterCine from '../../components/Footer'
 import { Clapperboard, Film, MonitorPlay } from 'lucide-react'
 
+import { Div } from '../Home/styles'
+
 function Series() {
     const [showModalSerie, setShowModalSerie] = useState(false)
     const [serie, setSerie] = useState([])
@@ -49,8 +51,10 @@ function Series() {
                     {showModalSerie && <ModalSerie serieId={serie.id} setShowModalSerie={setShowModalSerie} />}
                     <Container>
                         <Info>
-                            <h1>{serie.title}</h1>
-                            <p>{serie.overview}</p>
+                            <Div>
+                                <h1>{serie.title}</h1>
+                                <p>{serie.overview}</p>
+                            </Div>
                             <ContainerButtons>
                                 <Button red={true} onClick={() => navigate(`/detalheSeries/${serie.id}`)} >Assita Agora</Button>
                                 <Button red={false} onClick={() => setShowModalSerie(true)}>Assita o Trailer</Button>

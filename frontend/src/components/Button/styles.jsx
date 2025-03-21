@@ -14,10 +14,23 @@ const buttonStyles = css`
         color: #ff0000;
         background: #fff;
     }
+
+    @media screen and (max-width: 900px) {
+        font-size: 1rem;
+    }
+    @media screen and (max-width: 780px) {
+        font-size: 0.9rem;
+    }
+
+    @media screen and (max-width: 630px) {
+        width: 200px;
+    }
 `
 
 export const ButtonWhite = styled.button`
     ${buttonStyles}
+
+   
 `
 export const ButtonRed = styled.button`
     ${buttonStyles}

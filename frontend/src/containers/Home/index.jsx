@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Backgroud, Container, Info, ContainerButtons, Poster } from './styles';
+import { Backgroud, Container, Info, ContainerButtons, Poster, Div } from './styles';
 import Button from '../../components/Button';
 import Slider from '../../components/Slider';
 import { getImages } from '../../utils/getImages';
@@ -50,8 +50,10 @@ function Home() {
                     {showModal && <Modal movieId={movie.id} setShowModal={setShowModal} />}
                     <Container>
                         <Info>
-                            <h1>{movie.title}</h1>
-                            <p>{movie.overview}</p>
+                            <Div>
+                                <h1>{movie.title}</h1>
+                                <p>{movie.overview}</p>
+                            </Div>
                             <ContainerButtons>
                                 <Button red={true} onClick={() => navigate(`/detalhe/${movie.id}`)}>
                                     Assista Agora

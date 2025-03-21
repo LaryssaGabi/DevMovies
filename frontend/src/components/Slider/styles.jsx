@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     background: #000;
-    padding: 0 20px;    
+    padding: 0 40px;    
     overflow: hidden;
 
     h2{

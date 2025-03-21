@@ -9,6 +9,7 @@ import { getMovie, getPopularMovie, getMovieViewNow, getMovieView } from '../../
 import FooterCine from '../../components/Footer'
 
 import { Drama, Film, Video } from 'lucide-react'
+import { Div } from '../Home/styles'
 
 function Movies() {
     const [showModal, setShowModal] = useState(false)
@@ -50,8 +51,10 @@ function Movies() {
                     {showModal && <Modal movieId={movie.id} setShowModal={setShowModal} />}
                     <Container>
                         <Info>
-                            <h1>{movie.title}</h1>
-                            <p>{movie.overview}</p>
+                            <Div>
+                                <h1>{movie.title}</h1>
+                                <p>{movie.overview}</p>
+                            </Div>
                             <ContainerButtons>
                                 <Button red={true} onClick={() => navigate(`/detalhe/${movie.id}`)} >Assita Agora</Button>
                                 <Button red={false} onClick={() => setShowModal(true)}>Assita o Trailer</Button>

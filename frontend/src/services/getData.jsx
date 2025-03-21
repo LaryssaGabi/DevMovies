@@ -3,7 +3,7 @@ import api from '../services/api'
 //Home
 export async function getMovies() {
     const { data: { results } } = await api.get('/movie/popular')
-    return results[1]
+    return results[0]
 }
 
 export async function getTopMovies() {
@@ -30,7 +30,7 @@ export async function getTopPeople() {
 //Filmes
 export async function getMovie() {
     const { data: { results } } = await api.get('/movie/upcoming')
-    return results[1]
+    return results[12]
 }
 
 export async function getPopularMovie() {
