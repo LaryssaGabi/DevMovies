@@ -131,4 +131,8 @@ export const ContainerButtons = styled.div`
     display: flex;
     gap: 20px;
     margin-top: 30px;
+
+    @media screen and (max-width: 630px) {
+      margin-top: 18px;
+    }
 `

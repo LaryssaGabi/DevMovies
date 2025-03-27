@@ -48,7 +48,7 @@ function Home() {
             {movie && (
                 <Backgroud img={getImages(movie.backdrop_path)}>
                     {showModal && <Modal movieId={movie.id} setShowModal={setShowModal} />}
-                    <Container>
+                     <Container>
                         <Info>
                             <Div>
                                 <h1>{movie.title}</h1>

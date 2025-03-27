@@ -25,7 +25,25 @@ export const Container = styled.div`
     iframe{
         border: none;
         height: 60vh;
-
     }
+  
+`
+export const ContainerDiv = styled.div`
+    background-color: #000;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    gap: 20px;
+    padding: 50px;
+    max-width: 1200px;
+    border-radius: 20px;
+
+   p{
+    color: #fff;
+    font-size: 20px;
+   }
   
 `
