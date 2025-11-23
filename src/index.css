@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cinematic Dark Theme */
+    --background: 220 20% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Cinematic Red Primary */
+    --primary: 0 84% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Electric Blue Secondary */
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Dark Muted */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
+
+    /* Golden Accent */
+    --accent: 43 100% 60%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 0 84% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom Cinema Variables */
+    --cinema-gradient: linear-gradient(135deg, hsl(0 84% 55% / 0.2), hsl(217 91% 60% / 0.2));
+    --cinema-glow: 0 0 40px hsl(0 84% 55% / 0.3);
+    --card-hover: 220 18% 14%;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
